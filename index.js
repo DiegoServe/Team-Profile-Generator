@@ -1,4 +1,5 @@
 // Inquirer & File System
+const generateHTML = require(dist/generateHTML.js);
 const inquirer = require('inquirer');
 const fs = require('fs');
 
@@ -13,7 +14,7 @@ const { addListener } = require('process');
 const employee = [];
 
 // prompt to start team or exit
-function startApp() {
+function init() {
     inquirer
         .prompt([
             {
@@ -289,7 +290,23 @@ function addIntern() {
         });
 }
 
+// function to write Index.html file
+function writeToFile(fileName, data,) {
+    fs.writeFile(fileName, data, (err) => {
+        if (err)
+        throw err;
+        console.log('Team Profile Created!')
+    });
+};
 
+// Function to initialize app
+function init() {
+    inquirer.prompt(questions)
+    .then(function (userInput) {
+        console.log(userInput)
+        writeToFile("Index.html", generateHTML(userInput));
+    });
+};
 
-// Start App!
-startApp();
+// Function to initialize app
+init();
