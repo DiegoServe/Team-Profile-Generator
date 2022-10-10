@@ -75,8 +75,31 @@ function addManager() {
                 }
             }
         },
-
+        {
+            Name:'next employee',
+            type: 'confirm',
+            message: "Would you like to add another employee?",
+        },
     ])
+
+    // capture respnses and create new manager
+    .then((res, err) => {
+        if (err) console.error(err);
+        const newManager = new Manager(
+            res.name,
+            res.id,
+            res.email,
+        );
+        // push new manager to employees array
+        employees.push(newManager);
+
+        if (res.nextEmp) {
+            newMember();
+        } else {
+            console.log(employees);
+            renderTeam();
+        }
+    });
 }
 
 // Start App!
