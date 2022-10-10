@@ -130,6 +130,86 @@ function newMember() {
         });
 }
 
+// Data for engineer
+function addEngineer() {
+	inquirer
+		.prompt([
+			{
+				name: 'name',
+				type: 'input',
+				message: "What is the Engineer's name?",
+				validate: (input) => {
+					if (input) {
+						return true;
+					} else {
+						console.log("Please enter the Engineer's name!");
+						return false;
+					}
+				},
+			},
+            {
+				name: 'id',
+				type: 'input',
+				message: "Enter the Engineer's Employee ID number:",
+				validate: (input) => {
+					if (input) {
+						return true;
+					} else {
+						console.log("Please enter the Engineer's Employee ID number!");
+						return false;
+					}
+				},
+			},
+            {
+				name: 'email',
+				type: 'input',
+				message: "Enter the Engineer's email address:",
+				validate: (input) => {
+					if (input) {
+						return true;
+					} else {
+						console.log("Please enter the Engineer's email address");
+						return false;
+					}
+				},
+			},	
+            {
+				name: 'gitHub',
+				type: 'input',
+				message: "Enter the Engineer's GitHub username:",
+				validate: (input) => {
+					if (input) {
+						return true;
+					} else {
+						console.log("Please enter the Engineer's GitHub username!");
+						return false;
+					}
+				},
+			},
+			{
+				name: 'nextEmp',
+				type: 'confirm',
+				message: 'Would you like to add another employee?',
+			},
+        ])
+        .then((res, err) => {
+			if (err) console.error(err);
+			const newEngineer = new Engineer(
+				res.name,
+				res.id,
+				res.email,
+				res.gitHub
+			);
+			employees.push(newEngineer);
+			if (res.nextEmp) {
+				newMember();
+			} else {
+				renderTeam();
+			}
+		});
+}
+
+			
 
 
 
