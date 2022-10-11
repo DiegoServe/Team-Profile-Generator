@@ -1,28 +1,21 @@
-//fs for writing file
+//fs for writing file and prompts
 const fs = require('fs');
-
-//inquirer for prompting user for their response
 const inquirer = require('inquirer');
 
-// importing constructor functions
+// constructor functions
 const Employee = require('./lib/Employee');
 const Engineer = require('./lib/Engineer');
 const Intern = require('./lib/Intern');
 const Manager = require('./lib/Manager');
 
-//importing layout template file
+// importing layout and generate function
 const generateTemplate = require('./src/page-template');
-
-
-//importing generate function 
 const generateHtml = require('./src/generate-HTML');
 
-//creating empty array to store user input
-
+// empty team members array
 const teamMembers = []
 
-//prompting userinput 
-
+//prompts
 function userInfo() {
     inquirer.prompt([
         {
@@ -33,7 +26,7 @@ function userInfo() {
                 if (nameInput) {
                     return true;
                 } else {
-                    return 'Please enter Employee Name.';
+                    return 'Please enter Employee Name!';
                 }
             }
         },
@@ -46,7 +39,7 @@ function userInfo() {
                 if (emailInput) {
                     return true;
                 } else {
-                    return 'Please enter Employee e-mail address.';
+                    return 'Please enter Employee e-mail address!';
                 }
             }
         },
@@ -59,7 +52,7 @@ function userInfo() {
                 if (idInput) {
                     return true;
                 } else {
-                    return 'Please enter Employee Id.';
+                    return 'Please enter Employee Id!';
                 }
             }
         },
@@ -87,7 +80,7 @@ function userInfo() {
                             if (officeInput) {
                                 return true;
                             } else {
-                                return 'Please enter office No.';
+                                return 'Please enter office number!';
                             }
                         }
                         
@@ -109,7 +102,7 @@ function userInfo() {
                             if (githubInput) {
                                 return true;
                             } else {
-                                return 'Please enter gitHub username.';
+                                return 'Please enter gitHub username!';
                             }
                         }
                     }
@@ -130,7 +123,7 @@ function userInfo() {
                             if (schoolInput) {
                                 return true;
                             } else {
-                                return 'Please enter school  name.';
+                                return 'Please enter the name of the school.';
                             }
                         }
 
@@ -151,8 +144,7 @@ function userInfo() {
 
             }
 
-            //add option 
-
+            //add employees
             function addOption() {
                 inquirer.prompt([
                     {
