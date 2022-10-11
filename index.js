@@ -13,7 +13,7 @@ const Engineer = require('./lib/Engineer');
 const Intern = require('./lib/Intern'); 
 
 //import layout template file
-const generateTemplate = require('');
+// const generateTemplate = require('');
 
 // team array
 const teamMembers = []; 
