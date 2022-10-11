@@ -9,11 +9,11 @@ body{
     }
 .navbar-brand {
     float:none;
-    font-size: 48px;}
+    font-size: 28px;}
 
 .navbar{
-    background: rgb(246, 241, 241);
-    color: rgb(3, 3, 3);
+    background: rgb(246, 243, 243);
+    color: rgb(13, 12, 12);
 }
 
 .card{
@@ -32,7 +32,7 @@ body{
 }
 
 .text-muted {
-    color:white;
+    color:rgb(16, 15, 15);
 }
 
 .list-group{
