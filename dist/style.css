@@ -9,15 +9,15 @@ body{
     }
 .navbar-brand {
     float:none;
-    font-size: 28px;}
+    font-size: 48px;}
 
 .navbar{
-    background: rgb(249, 246, 246);
-    color: rgb(18, 17, 17);
+    background: rgb(255,0,0);
+    color: rgb(255, 255, 255);
 }
 
 .card{
-    margin: 10px;
+    margin: 20px;
     padding: 0;
 }
 

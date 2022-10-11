@@ -6,7 +6,6 @@ let generatehtmlPage = teamObj => {
     let htmlCard = ""
 
     //loop over array of objects
-
     for(let i = 0; i < teamObj.length; i++){
         let finalPrompt = teamObj[i].office || teamObj[i].gitHub || teamObj[i].school;
         let keys = Object.keys(teamObj[i]);
@@ -25,7 +24,7 @@ let generatehtmlPage = teamObj => {
         }
 
 
-       //htmll card
+       //html card
         let {name, role, email, id} = teamObj[i]
         htmlCard+= `
          <div class="card col" style="width: 18rem;">
@@ -54,7 +53,7 @@ let generatehtmlPage = teamObj => {
         <title>Team Member Profile</title>
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
             integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-        <link rel="stylesheet" href="style.css">
+        <link rel="stylesheet" href="dist/style.css">
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
         
     
