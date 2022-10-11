@@ -64,8 +64,107 @@ function userInfo() {
 
         },
     ])
+    .then(answers => {
 
+        if (answers.role === 'Manager') {
+            inquirer.prompt([
+                {
+                    type: 'input',
+                    name: 'office',
+                    message:'Enter office number:',
+                    validate: officeInput => {
+                        if (officeInput) {
+                            return true;
+                        } else {
+                            return 'Please enter office No.';
+                        }
+                    }
+                    
+                }
+            ])
+            .then(response => {
+                console.log(response.office);
+                const ManagerTeam = new Manager (answers.name, answers.email, answers.id, answers.role, response.office)
+                teamMembers.push(ManagerTeam);
+                addOption()
+            })
+        }else if(answers.role === 'Engineer' ){
+            inquirer.prompt([
+                {
+                    type: 'input',
+                    name: 'gitHub',
+                    message:'Enter Github name:',
+                    validate: githubInput => {
+                        if (githubInput) {
+                            return true;
+                        } else {
+                            return 'Please enter gitHub username.';
+                        }
+                    }
+                }
+            ])
+            .then(response => {
+                console.log(response.gitHub);
+                const EngineerTeam = new Engineer (answers.name, answers.email, answers.id, answers.role, response.gitHub)
+                teamMembers.push(EngineerTeam);
+                addOption()
+            })
+        } else if (answers.role === 'Intern'){
+            inquirer.prompt([
+                {
+                    type: 'input',
+                    name: 'school',
+                    message:'Enter School name:', 
+                    validate: function (schoolInput) {
+                        if (schoolInput) {
+                            return true;
+                        } else {
+                            return 'Please enter school  name.';
+                        }
+                    }
 
+                }
+            ])
+            .then(response =>{
+                console.log(response.school);
+                const internTeam = new Intern (answers.name,  answers.email, answers.id, answers.role, response.school)
+                teamMembers.push(internTeam);
+                addOption()
+            })
+        }
 
+        else {
+            const employeeTeam = new Employee (answers.name, answers.email, answers.id, answers.role);
+            teamMembers.push(employeeTeam);
+            addOption()
+
+        }
+
+        //add option 
+
+        function addOption() {
+            inquirer.prompt([
+                {
+                    type:'confirm',
+                    name: 'addMore',
+                    message:'Would you like to add another Employee?'
+                }
+            ])
+            .then(res =>{
+                if(res.addMore === true){
+                    userInfo(teamMembers);
+                }else{
+                    console.log('team', teamMembers)
+                    let cardLayoutHtml = generateTemplate(teamMembers);
+                    generateHtml(cardLayoutHtml)
+                }
+            })
+        }
+    })
 }
+
+
+userInfo();
+
+
 
