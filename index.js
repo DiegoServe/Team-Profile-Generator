@@ -32,3 +32,40 @@ function userInfo() {
                 }
             }
         },
+        {
+            type: 'input',
+            message: 'Enter Email: ',
+            name: 'email',
+            validate: function (emailInput) {
+                if (emailInput) {
+                    return true;
+                } else {
+                    return 'Please enter Employee e-mail address.';
+                }
+            }
+        },
+        {
+            type: 'input',
+            message: 'Enter Employee Id: ',
+            name: 'id',
+            validate: function (idInput) {
+                if (idInput) {
+                    return true;
+                } else {
+                    return 'Please enter Employee Id.';
+                }
+            }
+        },
+        {
+            type: 'list',
+            message: 'Select Role: ',
+            name: 'role',
+            choices: ["Manager", "Engineer", "Intern"]
+
+        },
+    ])
+
+
+
+}
+
