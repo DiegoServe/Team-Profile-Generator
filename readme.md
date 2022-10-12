@@ -16,6 +16,7 @@ A professional team profile generator that creates a website showcasing your tea
 ## Installation:
 - Step 1: Clone the repo at https://github.com/DiegoServe/Team-Profile-Generator.  
 - Step 2: Install NPM package.
+- Step 3: In the terminal, run node index.js to answer prompts.
 
 ## Usage:
 In order to use the app, first you must type node index.js into your terminal.  After answering all the prompts, the index.html file will be generated in your chosen directory.
