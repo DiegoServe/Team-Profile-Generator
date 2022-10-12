@@ -4,18 +4,18 @@
 [![license](https://img.shields.io/badge/license-none-blue)](https://shields.io)
 
 ## Table of Contents
--[Description](#description)
--[Installation](#installation)
--[Usage](#usage)
--[Contribution](#contribution)
--[Additional Information](#additional-information)
+- [Description](#description)
+- [Installation](#installation)
+- [Usage](#usage)
+- [Contribution](#contribution)
+- [Additional Information](#additional-information)
 
 ## Description:
 A professional team profile generator that creates a website showcasing your team members criteria. By answer a few promts a fully functioning HTML file will be automatically generated for you.
 
 ## Installation:
 - Step 1: Clone the repo at https://github.com/DiegoServe/Team-Profile-Generator.  
--Step 2: Install NPM package.
+- Step 2: Install NPM package.
 
 ## Usage:
 In order to use the app, first you must type node index.js into your terminal.  After answering all the prompts, the index.html file will be generated in your chosen directory.
